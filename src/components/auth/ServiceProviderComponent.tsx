@@ -143,11 +143,11 @@ function ServiceProviderComponent() {
             onBlur={formik.handleBlur}
             activelefticon={ActiveRegistrationNumber}
             aria-autocomplete="none"
-            autoComplete="new-password"
-            placeholder="Business Registration Number"
+            autoComplete="none"
+            placeholder="EIN/Tax ID"
           />
 
-        <Dropdown
+          <Dropdown
             placeholder="Select Category"
             name="category"
             isDisabled={isLoading}

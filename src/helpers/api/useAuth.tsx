@@ -104,7 +104,7 @@ export const useRegister = () => {
       username: "",
       password: "",
       confirmPassword: "",
-      terms: false,
+      accountType: 0,
     } as IAuthRegister,
     validateOnBlur: true,
     validateOnChange: true,
