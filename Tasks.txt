@@ -1,0 +1,4 @@
+1. Sign up the user
+2. Call the login endpoint to get the user id and login token
+3. Send the Business Details to the endpoint
+4. Show a screen where the User can download the App and continue to setup their account.
