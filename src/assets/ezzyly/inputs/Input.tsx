@@ -1,11 +1,11 @@
-import React, { FC, SVGProps, useState } from 'react';
-import EyeIcon from '../assets/inputs/EyeIcon';
-import EyeSlashIcon from '../assets/inputs/EyeSlash';
+import React, { FC, SVGProps, useState } from "react";
+import EyeIcon from "../assets/inputs/EyeIcon";
+import EyeSlashIcon from "../assets/inputs/EyeSlash";
 
 export interface Props extends React.InputHTMLAttributes<HTMLInputElement> {
-  variant: 'primary' | 'labeled';
+  variant: "primary" | "labeled";
   labelName: string;
-  name:string;
+  name: string;
   error: boolean; // boolean
   errorIcon: SVGProps<SVGSVGElement> | any;
   lefticon: SVGProps<SVGSVGElement> | any;
@@ -35,7 +35,7 @@ export const Input: FC<Partial<Props>> = ({
     ...rest
   } = props;
   switch (props.variant) {
-    case 'primary':
+    case "primary":
       return (
         <div
           className={`flex items-center   rounded-lg h-12 gap-x-3  px-4 border transition-all ease-in duration-100 

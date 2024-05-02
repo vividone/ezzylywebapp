@@ -15,26 +15,6 @@ export interface IAuthInput {
   // confirmPassword: string;
 }
 
-
-/**
- * {
-  "firstName": "TEST",
-  "lastName": "TEST",
-   "username": "fidelisekeh7",
-  "addressLine1":"46 Oduduwa. Street",
-  "addressLine2":"46 Oduduwa. Street",
-  "email":"fidelisekeh@gmail.com",
-  "phoneNumber":"+2348038814982",
-  "password":"password123",
-  "city":"Ifako",
-  "state":"Lagos",
-  "zipcode": "100001",
-  "country":"Nigeria",
-  "accountType": 0
-}
- * 
- */
-
 export interface IAuthRegister {
   firstName: string;
   lastName: string;

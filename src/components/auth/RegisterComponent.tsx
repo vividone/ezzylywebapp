@@ -1,14 +1,11 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { Flex, Span, Text } from "../common";
 import { Option } from "@/interface/auth";
-import {
-  Input,
-  PasswordInput,
-} from "@/assets/ezzyly/inputs/Input";
+import { Input, PasswordInput } from "@/assets/ezzyly/inputs/Input";
 import { Checkbox } from "@/assets/ezzyly/inputs/Checkbox";
 import { Buttons } from "@/assets/ezzyly/Buttons";
 import { ToastComponent } from "@/assets/ezzyly/specials/Toast";
-import { City, Country, State } from "country-state-city"
+import { City, Country, State } from "country-state-city";
 
 import {
   ProfileIcon,
@@ -186,7 +183,9 @@ function RegisterComponent() {
           name="username"
           disabled={isLoading}
           value={formik.values.username}
-          error={formik.errors.username && formik.touched.username ? true : false}
+          error={
+            formik.errors.username && formik.touched.username ? true : false
+          }
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
@@ -199,7 +198,11 @@ function RegisterComponent() {
           name="addressLine1"
           disabled={isLoading}
           value={formik.values.addressLine1}
-          error={formik.errors.addressLine1 && formik.touched.addressLine1 ? true : false}
+          error={
+            formik.errors.addressLine1 && formik.touched.addressLine1
+              ? true
+              : false
+          }
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
         />
@@ -212,7 +215,11 @@ function RegisterComponent() {
           name="addressLine2"
           disabled={isLoading}
           value={formik.values.addressLine2}
-          error={formik.errors.addressLine2 && formik.touched.addressLine2 ? true : false}
+          error={
+            formik.errors.addressLine2 && formik.touched.addressLine2
+              ? true
+              : false
+          }
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
       />
@@ -234,7 +241,11 @@ function RegisterComponent() {
           onBlur={() => {
             formik.setFieldTouched("country", true);
           }}
-          options={Country.getAllCountries().map(item => ({ label: item.name, value: item.name, name: item.isoCode }))}
+          options={Country.getAllCountries().map((item: any) => ({
+            label: item.name,
+            value: item.name,
+            name: item.isoCode,
+          }))}
           className="items-start text-start justify-start rounded-lg border border-[#CFD9DE] "
           Icon={Map}
           ActiveIcon={ActiveMapIcon}
@@ -257,7 +268,13 @@ function RegisterComponent() {
           onBlur={() => {
             formik.setFieldTouched("state", true);
           }}
-          options={State.getStatesOfCountry(selectedCountry?.name).map(item => ({ label: item.name, value: item.name, name: item.isoCode }))}
+          options={State.getStatesOfCountry(selectedCountry?.name).map(
+            (item: any) => ({
+              label: item.name,
+              value: item.name,
+              name: item.isoCode,
+            })
+          )}
           className="items-start text-start justify-start rounded-lg border border-[#CFD9DE] "
           Icon={Map}
           ActiveIcon={ActiveMapIcon}
@@ -281,8 +298,9 @@ function RegisterComponent() {
             formik.setFieldTouched("city", true);
           }}
           options={City.getCitiesOfState(
-            !selectedCountry?.name ? "" : selectedCountry.name, !selectedState?.name ? "" : selectedState.name
-          ).map(item => ({ label: item.name, value: item.name }))}
+            !selectedCountry?.name ? "" : selectedCountry.name,
+            !selectedState?.name ? "" : selectedState.name
+          ).map((item: any) => ({ label: item.name, value: item.name }))}
           className="items-start text-start justify-start rounded-lg border border-[#CFD9DE] "
           Icon={Map}
           ActiveIcon={ActiveMapIcon}
@@ -371,9 +389,7 @@ function RegisterComponent() {
         <Text className="text-center text-mixed_m5 ">
           Already have an account?
           <a href={PAGES.LOGIN} className="cursor-pointer">
-            <span className="text-vibing_blue_x ml-2 font-medium">
-              Login
-            </span>
+            <span className="text-vibing_blue_x ml-2 font-medium">Login</span>
           </a>
         </Text>
       </Flex>

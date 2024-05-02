@@ -31,7 +31,7 @@ export const Buttons = ({
     xxl: "text-base",
   };
   const colors = {
-    primary: `bg-[#0D63C6]  hover:bg-[#147AF0] active:bg-[#0B56AD] 
+    primary: `bg-[#68C3D4]  hover:bg-[#088399] active:bg-[#088399] 
     text-white
     disabled:opacity-30 `,
     secondary: `bg-[#F9F9F9] hover:border hover:bg-[#FBFCFD] hover:text-[#0D63C6] hover:border-[#AEBFC8] active:bg-[#DBE4FF] 
