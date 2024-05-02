@@ -42,7 +42,9 @@ export interface IAuthRegister {
   password: string;
   phoneNumber: string;
   confirmPassword?: string;
+  terms?: boolean;
   username: string;
+  country: string;
   city: string;
   state: string;
   zipcode: string;
