@@ -1,5 +1,5 @@
 import React, { FormEvent, useEffect, useState } from "react";
-import { Text, Span, Flex } from "../common";
+import { Text, Flex } from "../common";
 import { CatOption } from "@/interface/auth";
 import { Buttons } from "@/assets/ezzyly/Buttons";
 import {
@@ -25,7 +25,9 @@ function ServiceProviderComponent() {
   const { formik, isLoading, error, isError, isSuccess } = useOnboard();
   // const [selectedState, setSelectedState] = useState<Option | null>(null);
   // const [selectedCity, setSelectedCity] = useState<Option | null>(null);
-  const [selectedCategory, setSelectedCategory] = useState<CatOption | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<CatOption | null>(
+    null
+  );
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     formik.handleSubmit();
@@ -274,7 +276,7 @@ function ServiceProviderComponent() {
               disabled={!formik.isValid || isLoading}
               type="submit"
             >
-             Create Profile
+              Create Profile
             </Buttons>
           </Flex>
         </Flex>

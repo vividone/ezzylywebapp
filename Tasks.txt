@@ -1,4 +1,12 @@
+Part 1
 1. Sign up the user
 2. Call the login endpoint to get the user id and login token
 3. Send the Business Details to the endpoint
 4. Show a screen where the User can download the App and continue to setup their account.
+
+Part 2
+
+1. Login to their "dashboard"
+2. Update their profile
+3. Configure their prices
+4. View their recents services requests and earnings
