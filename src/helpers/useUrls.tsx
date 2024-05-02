@@ -1,5 +1,5 @@
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
-export const TOKEN_VALUE = "LANDAPAY_AUTH";
+export const TOKEN_VALUE = "Ezzyly_AUTH";
 export const WEBSITE_URL = process.env.NEXT_WEBSITE_URL;
 
 export function useUrls() {

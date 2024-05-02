@@ -1,4 +1,4 @@
-import React, { FC, HTMLAttributes, useState } from 'react';
+import React, { FC, HTMLAttributes, useState } from "react";
 
 interface INavigationItems extends HTMLAttributes<HTMLDivElement> {
   isActive: boolean;
@@ -7,7 +7,7 @@ interface INavigationItems extends HTMLAttributes<HTMLDivElement> {
   activelefticon: React.ElementType;
   notificationNum: number;
 }
-export const NavigationItems: FC<Partial<INavigationItems>> = props => {
+export const NavigationItems: FC<Partial<INavigationItems>> = (props) => {
   const {
     isActive,
     isCollapsed,
@@ -23,12 +23,12 @@ export const NavigationItems: FC<Partial<INavigationItems>> = props => {
     <div
       className={` flex items-center cursor-pointer relative  hover:text-[#147AF0] rounded-lg 
       ${
-        isCollapsed ? ' py-0 px-0 h-12 justify-center  w-12' : 'justify-between'
+        isCollapsed ? " py-0 px-0 h-12 justify-center  w-12" : "justify-between"
       }
       ${
         isActive
-          ? 'bg-[#F1F7FE] text-[#0D63C6] font-[500] '
-          : 'bg-transparent text-[#356075] hover:bg-[#F1F7FE] '
+          ? "bg-[#F1F7FE] text-[#0D63C6] font-[500] "
+          : "bg-transparent text-[#356075] hover:bg-[#F1F7FE] "
       } px-4 py-6  ${className}`}
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}

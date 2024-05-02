@@ -1,6 +1,6 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes } from "react";
 
-interface ITableWrapper extends HTMLAttributes<HTMLDivElement> {}
+type ITableWrapper = HTMLAttributes<HTMLDivElement>;
 export const TableWrapper: FC<Partial<ITableWrapper>> = ({
   className,
   ...props
@@ -12,13 +12,13 @@ export const TableWrapper: FC<Partial<ITableWrapper>> = ({
   );
 };
 
-interface ITableBody extends HTMLAttributes<HTMLTableSectionElement> {}
+type ITableBody = HTMLAttributes<HTMLTableSectionElement>;
 
 export const TableBody: FC<Partial<ITableBody>> = ({ children }) => {
   return <tbody>{children}</tbody>;
 };
 
-interface ITableData extends HTMLAttributes<HTMLTableCellElement> {}
+type ITableData = HTMLAttributes<HTMLTableCellElement>;
 export const TableData: FC<Partial<ITableData>> = ({
   children,
   className,
@@ -36,36 +36,36 @@ export const TableData: FC<Partial<ITableData>> = ({
   );
 };
 
-interface ITableHeadSection extends HTMLAttributes<HTMLTableElement> {}
+type ITableHeadSection = HTMLAttributes<HTMLTableElement>;
 export const TableHeadSection: FC<Partial<ITableHeadSection>> = ({
   className,
   ...props
 }) => {
-  return <thead className={`${className}`} >{props.children}</thead>;
+  return <thead className={`${className}`}>{props.children}</thead>;
 };
 
-interface ITableRow extends HTMLAttributes<HTMLTableRowElement> {}
+type ITableRow = HTMLAttributes<HTMLTableRowElement>;
 export const TableRow: FC<Partial<ITableRow>> = ({ className, ...props }) => {
   return (
     <tr
       className={` border-b cursor-pointer  transition-colors duration-500 ease-in-out border-[#F6F9FA] 
     hover:bg-[#FCFDFD] active:bg-[#F6F9FA] 
     ${className}`}
-    {...props}
+      {...props}
     >
       {props.children}
     </tr>
   );
 };
 
-interface ITableHead extends HTMLAttributes<HTMLTableCellElement> {}
+type ITableHead = HTMLAttributes<HTMLTableCellElement>;
 export const TableHead: FC<ITableHead> = ({ className, ...props }) => {
   return (
     <th
       className={`text-left whitespace-nowrap first-of-type:rounded-l-lg last-of-type:rounded-r-lg  lg:first-of-type:static first-of-type:absolute  text-sm text-[#356075] normal-case  p-4 
     first-of-type:bg-[#F6F9FA] lg:first-of-type:bg-transparent 
     ${className}`}
-    {...props}
+      {...props}
     >
       {props.children}
     </th>

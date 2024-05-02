@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import Select, {
   components,
   ControlProps,
@@ -6,10 +6,10 @@ import Select, {
   OptionProps,
   Props,
   StylesConfig,
-} from 'react-select';
-import TickCircle from '../assets/dropdown/TickCircle';
-import ArrowDown from '../assets/dropdown/ArrowDown';
-import ActiveArrowDownIcon from '../assets/dropdown/ActiveArrowDown';
+} from "react-select";
+import TickCircle from "../assets/dropdown/TickCircle";
+import ArrowDown from "../assets/dropdown/ArrowDown";
+import ActiveArrowDownIcon from "../assets/dropdown/ActiveArrowDown";
 
 interface SelectOptions {
   readonly value: string;
@@ -27,22 +27,21 @@ const Control = ({ ...props }: ControlProps<SelectOptions, false>) => {
   return (
     <components.Control
       className={
-        (props.menuIsOpen
-          ? '!shadow-focus-xl border !border-[#6FAEF6]'
-          : '') + ' h-12'
+        (props.menuIsOpen ? "!shadow-focus-xl border !border-[#6FAEF6]" : "") +
+        " h-12"
       }
       {...props}
     >
       {(!props || !props.isFocused) && Icon ? (
         <>
-          <Icon />{' '}
+          <Icon />{" "}
         </>
       ) : (
         <></>
       )}
       {props.isFocused && ActiveIcon ? (
         <>
-          <ActiveIcon />{' '}
+          <ActiveIcon />{" "}
         </>
       ) : (
         <></>
@@ -60,8 +59,8 @@ const Option = ({ children, ...props }: OptionProps<SelectOptions>) => {
         className={`flex max-w-[100%] px-3 cursor-pointer rounded-lg py-4 ml-2 items-center justify-between
                 ${
                   props.isSelected
-                    ? 'bg-[#F5FEFB]  text-[#147AF0] font-bold'
-                    : 'text-[#3D4043] hover:bg-[#F5FEFB]'
+                    ? "bg-[#F5FEFB]  text-[#147AF0] font-bold"
+                    : "text-[#3D4043] hover:bg-[#F5FEFB]"
                 }
                 `}
       >
@@ -82,60 +81,60 @@ const DropdownIndicator = (
   );
 };
 type DropdownType = {
-Icon:React.ReactElement | any;
-ActiveIcon:React.ReactElement | any;
-error:any
-value: any;
-}&Props<SelectOptions>
-export const Dropdown = ({error, ...props}:Partial<DropdownType>) => {
+  Icon: React.ReactElement | any;
+  ActiveIcon: React.ReactElement | any;
+  error: any;
+  value: any;
+} & Props<SelectOptions>;
+export const Dropdown = ({ error, ...props }: Partial<DropdownType>) => {
   const styles: StylesConfig<SelectOptions, false> = {
-    control: css => ({
+    control: (css) => ({
       ...css,
       fontWeight: 400,
-      paddingLeft: '1rem',
-      background: '#FCFDFD',
-      border: '1px solid #EEF4F6',
-      '&:hover': {
-        background: '#FCFDFD',
-        border: '1px solid #EEF4F6',
+      paddingLeft: "1rem",
+      background: "#FCFDFD",
+      border: "1px solid #EEF4F6",
+      "&:hover": {
+        background: "#FCFDFD",
+        border: "1px solid #EEF4F6",
       },
-      '&::placeholder': {
+      "&::placeholder": {
         fontWeight: 400,
-        color: 'red !important',
+        color: "red !important",
       },
-      '&:focused': {
-        background: 'red',
+      "&:focused": {
+        background: "red",
       },
     }),
-    placeholder: base => ({
+    placeholder: (base) => ({
       ...base,
-      fontSize: '1em',
-      color: '#869FAC',
+      fontSize: "1em",
+      color: "#869FAC",
       fontWeight: 400,
     }),
-    menu: base => ({
+    menu: (base) => ({
       ...base,
-      boxShadow: '0px -1px 8px 0px #C6CBCD4D',
-      maxWidth: '95%',
-      marginLeft: '5%',
+      boxShadow: "0px -1px 8px 0px #C6CBCD4D",
+      maxWidth: "95%",
+      marginLeft: "5%",
     }),
-    menuList: base => ({
+    menuList: (base) => ({
       ...base,
 
-      '::-webkit-scrollbar': {
-        width: '8px',
-        height: 'auto',
+      "::-webkit-scrollbar": {
+        width: "8px",
+        height: "auto",
       },
-      '::-webkit-scrollbar-track': {
-        background: 'white',
-        borderRadius: '8px',
+      "::-webkit-scrollbar-track": {
+        background: "white",
+        borderRadius: "8px",
       },
-      '::-webkit-scrollbar-thumb': {
-        background: '#F4F8F9',
-        borderRadius: '8px',
+      "::-webkit-scrollbar-thumb": {
+        background: "#F4F8F9",
+        borderRadius: "8px",
       },
-      '::-webkit-scrollbar-thumb:hover': {
-        background: '#F4F8F9',
+      "::-webkit-scrollbar-thumb:hover": {
+        background: "#F4F8F9",
       },
     }),
   };

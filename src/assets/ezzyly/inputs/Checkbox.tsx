@@ -1,8 +1,9 @@
-import React, { FC, useState } from 'react';
-import InActiveCheckbox from '../assets/inputs/InActiveCheckbox';
-import ActiveCheckbox from '../assets/inputs/ActiveCheckbox';
+import React, { FC, useState } from "react";
+import InActiveCheckbox from "../assets/inputs/InActiveCheckbox";
+import ActiveCheckbox from "../assets/inputs/ActiveCheckbox";
 
-export interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
+export interface CheckboxProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {
   labelName: string;
 }
 export const Checkbox: FC<Partial<CheckboxProps>> = ({
@@ -17,7 +18,7 @@ export const Checkbox: FC<Partial<CheckboxProps>> = ({
     } else {
       setChecked(false);
     }
-    onChange && onChange(e)
+    onChange && onChange(e);
   };
   return (
     <label className="flex items-center">
@@ -32,7 +33,7 @@ export const Checkbox: FC<Partial<CheckboxProps>> = ({
       ) : (
         <InActiveCheckbox className="cursor-pointer" />
       )}
-      <span className="ml-2">{labelName || ''}</span>
+      <span className="ml-2">{labelName || ""}</span>
     </label>
   );
 };

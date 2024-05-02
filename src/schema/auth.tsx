@@ -14,15 +14,11 @@ export const RegisterSchema = Yup.object().shape({
   confirmPassword: Yup.string()
     .oneOf([Yup.ref("password")], "Passwords must match")
     .required(""),
-    username: Yup.string().required("Role is required").trim().nullable(),
+  username: Yup.string().required("Role is required").trim().nullable(),
 });
 
-
 export const OnboardSchema = Yup.object().shape({
-  name: Yup.string()
-    .required("Business name is required")
-    .trim()
-    .nullable(),
+  name: Yup.string().required("Business name is required").trim().nullable(),
   regNumber: Yup.string().required("Register Number is required"),
   licenseNo: Yup.string().optional().trim(),
   description: Yup.string().required("Business Description is required"),
@@ -32,7 +28,7 @@ export const OnboardSchema = Yup.object().shape({
   city: Yup.string().optional().trim(),
   zipcode: Yup.string().optional().trim(),
   latitude: Yup.string().optional().trim(),
-longitude: Yup.string().optional().trim(),
+  longitude: Yup.string().optional().trim(),
   dateOfInc: Yup.string().required("Year is required"),
   logo: Yup.string().optional(),
 });

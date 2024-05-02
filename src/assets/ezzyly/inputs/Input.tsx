@@ -41,10 +41,10 @@ export const Input: FC<Partial<Props>> = ({
           className={`flex items-center   rounded-lg h-12 gap-x-3  px-4 border transition-all ease-in duration-100 
         ${
           props.error
-            ? 'border-[#FFAFAF] shadow-glow'
+            ? "border-[#FFAFAF] shadow-glow"
             : focus
-            ? 'bg-[#FEFEFE]  border text-[#CFD9DE] border-[#6FAEF6] shadow-focus-xl'
-            : 'bg-[#FCFDFD]  border-[#CFD9DE] '
+            ? "bg-[#FEFEFE]  border text-[#CFD9DE] border-[#6FAEF6] shadow-focus-xl"
+            : "bg-[#FCFDFD]  border-[#CFD9DE] "
         }
         ${containerClassName}
         `}
@@ -60,11 +60,11 @@ export const Input: FC<Partial<Props>> = ({
           {props.error && props.errorIcon ? <props.errorIcon /> : <> </>}
           <input
             className={`!outline-none bg-transparent  transition-all duration-300 ease-in-out  text-[#356075] w-full placeholder:text-base
-            ${className ? className : ''}
+            ${className ? className : ""}
             ${
               focus
-                ? ' placeholder:text-[#86A0AC4D]'
-                : '  placeholder:text-[#869FAC]'
+                ? " placeholder:text-[#86A0AC4D]"
+                : "  placeholder:text-[#869FAC]"
             }
             placeholder:text-[15px] lg:placeholder:text-base
             `}
@@ -79,7 +79,7 @@ export const Input: FC<Partial<Props>> = ({
         <div className="flex flex-col space-y-3 " role="searchbox">
           <p
             className={`text-sm transition-all ease-in duration-100 ${
-              focus ? 'text-[#147AF0]' : 'text-[#869FAC]'
+              focus ? "text-[#147AF0]" : "text-[#869FAC]"
             }`}
           >
             {labelName}
@@ -88,10 +88,10 @@ export const Input: FC<Partial<Props>> = ({
             className={`flex items-center rounded-lg h-12 gap-x-3  px-4 border transition-all ease-in duration-100 
             ${
               props.error
-                ? 'border-[#FFAFAF] shadow-glow'
+                ? "border-[#FFAFAF] shadow-glow"
                 : focus
-                ? 'bg-[#FEFEFE]  border text-[#CFD9DE] border-[#6FAEF6] shadow-focus-xl'
-                : 'bg-[#FCFDFD]  border-[#CFD9DE] '
+                ? "bg-[#FEFEFE]  border text-[#CFD9DE] border-[#6FAEF6] shadow-focus-xl"
+                : "bg-[#FCFDFD]  border-[#CFD9DE] "
             }
         ${containerClassName}
         `}
@@ -110,10 +110,10 @@ export const Input: FC<Partial<Props>> = ({
               bg-transparent  transition-all duration-300 ease-in-out
                w-full   ${
                  focus
-                   ? ' placeholder:text-[#86A0AC4D]'
-                   : '  placeholder:text-[#869FAC]'
+                   ? " placeholder:text-[#86A0AC4D]"
+                   : "  placeholder:text-[#869FAC]"
                }
-            ${focus ? 'text-[#171A1C]' : 'text-[#356075]'}
+            ${focus ? "text-[#171A1C]" : "text-[#356075]"}
             placeholder:text-[15px] lg:placeholder:text-base
             ${className}
             `}
@@ -150,10 +150,10 @@ export const PasswordInput: FC<Partial<Props>> = ({
       className={`flex items-center   rounded-lg h-12 gap-x-3  px-4 border transition-all ease-in duration-100 
       ${
         props.error
-          ? 'border-[#FFAFAF] shadow-glow'
+          ? "border-[#FFAFAF] shadow-glow"
           : focus
-          ? 'bg-[#FEFEFE]  border text-[#CFD9DE] border-[#6FAEF6] shadow-focus-xl'
-          : 'bg-[#FCFDFD]  border-[#CFD9DE] '
+          ? "bg-[#FEFEFE]  border text-[#CFD9DE] border-[#6FAEF6] shadow-focus-xl"
+          : "bg-[#FCFDFD]  border-[#CFD9DE] "
       }
     ${containerClassName}
     `}
@@ -168,14 +168,14 @@ export const PasswordInput: FC<Partial<Props>> = ({
       )}
       {props.error && props.errorIcon ? <props.errorIcon /> : <> </>}
       <input
-        type={`${showPassword ? 'text' : 'password'}`}
+        type={`${showPassword ? "text" : "password"}`}
         className={`${
-          showPassword ? 'text-base' : 'text-xl'
+          showPassword ? "text-base" : "text-xl"
         } outline-none bg-transparent  w-full placeholder:text-[15px] lg:placeholder:text-base
         ${
           focus
-            ? ' placeholder:text-[#86A0AC4D]'
-            : '  placeholder:text-[#869FAC]'
+            ? " placeholder:text-[#86A0AC4D]"
+            : "  placeholder:text-[#869FAC]"
         }
         ${className}
         `}
@@ -184,13 +184,13 @@ export const PasswordInput: FC<Partial<Props>> = ({
       {!showPassword && (
         <EyeIcon
           onClick={() => setShowPassword(true)}
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: "pointer" }}
         />
       )}
       {showPassword && (
         <EyeSlashIcon
           onClick={() => setShowPassword(false)}
-          style={{ cursor: 'pointer' }}
+          style={{ cursor: "pointer" }}
         />
       )}
     </div>

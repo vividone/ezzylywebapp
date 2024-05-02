@@ -36,8 +36,8 @@ const ForgotPasswordComponent = () => {
           Account recovery
         </Text>
         <Text className="text-sm text-mixed_m5">
-          Kindly enter the email address associated with your LandaPay account
-          to continue
+          Kindly enter the email address associated with your Ezzyly account to
+          continue
         </Text>
       </Flex>
 

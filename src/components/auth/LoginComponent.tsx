@@ -37,7 +37,7 @@ function LoginComponent() {
     <Flex className=" w-full lg:w-[494px] mt-4 flex-col rounded-2xl md:text-center py-10  lg:px-4 bg-white">
       <Flex className="flex-col p-5 lg:gap-3">
         <Text className="text-neutral-black font-bold leading-[31.05px] text-[22px] md:text-[23px]">
-          Ezzyly Service Provider 
+          Ezzyly Service Provider
         </Text>
         <Text className="text-mixed_m5 text-[15px] md:text-base leading-[24px]">
           Enter your username and password to continue

@@ -36,7 +36,7 @@ const PopupMenu: FC<Partial<IPopupMenu>> = (props) => {
         t={t}
         status="success"
         title="Logout Successful"
-        description="You have been logged out from LandaPay"
+        description="You have been logged out from Ezzyly"
       />
     ));
   };

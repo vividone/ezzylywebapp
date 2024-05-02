@@ -1,5 +1,5 @@
 import SetupPassword from "@/assets/auth/SetupPassword";
-import LandaPayBlack from "@/assets/common/LandaPayBlack";
+import EzzylyBlack from "@/assets/common/EzzylyBlack";
 import ResetPasswordComponent from "@/components/auth/ResetPasswordComponent";
 import Flex from "@/components/common/Flex";
 import Text from "@/components/common/Text";
@@ -15,11 +15,11 @@ const ResetPassword = () => {
         <Flex className="w-full items-center lg:items-start lg:mt-8 lg:justify-between flex-col">
           <Flex className="flex-col">
             <a href={PAGES.LOGIN}>
-              <LandaPayBlack />
+              <EzzylyBlack />
             </a>
             <Image
               src="/img/accountmockup.png"
-              alt="landapay logo"
+              alt="Ezzyly logo"
               width={506}
               height={498}
               className="hidden ml-20 lg:block mt-20"
@@ -27,7 +27,7 @@ const ResetPassword = () => {
           </Flex>
 
           <Text className="text-center hidden lg:inline  lg:mt-10 max-w-[258px] lg:max-w-[max-content] mx-auto lg:mx-0 font-medium  text-mixed_m3 text-[11px] md:text-sm">
-            © 2023. LandaPay is a product of Landa Finance Ltd. All rights
+            © 2023. Ezzyly is a product of Landa Finance Ltd. All rights
             reserved.
           </Text>
         </Flex>

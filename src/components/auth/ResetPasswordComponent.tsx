@@ -29,7 +29,7 @@ const ResetPasswordComponent = () => {
           Set new password
         </Text>
         <Text className="text-sm text-mixed_m5 max-w-[282px]">
-          Create a new password to secure your LandaPay account
+          Create a new password to secure your Ezzyly account
         </Text>
       </Flex>
 

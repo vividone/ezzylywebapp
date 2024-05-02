@@ -14,7 +14,7 @@ import React, { FC } from "react";
 //     >
 //       {props.children}
 //       <Text className="hidden lg:inline font-medium  text-white text-sm">
-//           © 2023. LandaPay is a product of Landa Finance Ltd. All rights
+//           © 2023. Ezzyly is a product of Landa Finance Ltd. All rights
 //           reserved.
 //         </Text>
 //     </Flex>
@@ -33,7 +33,8 @@ const AuthOthersLayout: FC<Partial<Layouts>> = (props) => {
       {props.children}
       <Flex className="bg-container w-full justify-start">
         <Text className="text-center lg:hidden mt-8 lg:mt-0 max-w-[258px] lg:max-w-[max-content] mx-auto lg:mx-0 font-medium  text-mixed_m3 text-[11px] md:text-sm">
-        Ezzyly is a product of Seer Group Inc. | © 2024 Seer Group Inc. All Rights Reserved.
+          Ezzyly is a product of Seer Group Inc. | © 2024 Seer Group Inc. All
+          Rights Reserved.
         </Text>
       </Flex>
     </Flex>

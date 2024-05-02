@@ -10,17 +10,17 @@ import React from "react";
 //       <Flex className="w-full flex-col items-center lg:flex-row lg:mt-0 lg:justify-center lg:items-start bg-container">
 //         <Flex className="w-full items-center lg:mt-10 lg:items-start flex-col">
 //           <a href={PAGES.LOGIN}>
-//             <LandaPayBlack />
+//             <EzzylyBlack />
 //           </a>
 //           <Image
 //             src="/img/mockup.png"
 //             className="ml-8 mt-6 hidden lg:block"
 //             width={750}
 //             height={563}
-//             alt="landapay mockup for iphone 13"
+//             alt="Ezzyly mockup for iphone 13"
 //           />
 //           <Text className="text-center hidden lg:inline  lg:mt-10 max-w-[258px] lg:max-w-[max-content] mx-auto lg:mx-0 font-medium  text-mixed_m3 text-[11px] md:text-sm">
-//             © 2023. LandaPay is a product of Landa Finance Ltd. All rights
+//             © 2023. Ezzyly is a product of Landa Finance Ltd. All rights
 //             reserved.
 //           </Text>
 //         </Flex>

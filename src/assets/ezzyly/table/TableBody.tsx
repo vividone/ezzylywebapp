@@ -1,6 +1,6 @@
-import React, { FC, HTMLAttributes } from 'react';
+import React, { FC, HTMLAttributes } from "react";
 
-interface ITableBody extends HTMLAttributes<HTMLTableSectionElement> {}
+type ITableBody = HTMLAttributes<HTMLTableSectionElement>;
 const TableBody: FC<Partial<ITableBody>> = ({ children }) => {
   return <tbody>{children}</tbody>;
 };

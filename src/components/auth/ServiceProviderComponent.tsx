@@ -180,7 +180,7 @@ function ServiceProviderComponent() {
             Icon={Map}
             ActiveIcon={ActiveMapIcon}
           />
-      {/*    <Dropdown
+          {/*    <Dropdown
             placeholder="Select state"
             name="state"
             isDisabled={isLoading}
@@ -282,7 +282,6 @@ function ServiceProviderComponent() {
         </Flex>
       </form>
       {/* create new account */}
-
     </Flex>
   );
 }

@@ -1,10 +1,10 @@
-import React, { HTMLAttributes, ReactNode } from 'react';
+import React, { HTMLAttributes, ReactNode } from "react";
 
 export interface Props extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode;
-  variant?: 'Primary' | 'Secondary';
-  size?: 'sm' | 'md' | 'lg';
-  color?: 'Primary' | 'Secondary';
+  variant?: "Primary" | "Secondary";
+  size?: "sm" | "md" | "lg";
+  color?: "Primary" | "Secondary";
   header1?: string;
   text?: string;
   icon?: any;
@@ -12,8 +12,8 @@ export interface Props extends HTMLAttributes<HTMLDivElement> {
 }
 
 export const Card2 = ({
-  size = 'lg',
-  variant = 'Primary',
+  size = "lg",
+  variant = "Primary",
   children,
   icon,
   header1,
@@ -22,14 +22,14 @@ export const Card2 = ({
   ...props
 }: Props) => {
   const sizes = {
-    sm: 'py-[8px] text-[12px] px-[6px] w-[77px] h-[32px]',
-    md: ' py-2 text-[13px] px-2 w-[17rem] h-[10.2rem]',
-    lg: ' w-[157px] text-[15px] h-[48px] py-[18px] px-[20px]',
-    xxl: 'text-base',
+    sm: "py-[8px] text-[12px] px-[6px] w-[77px] h-[32px]",
+    md: " py-2 text-[13px] px-2 w-[17rem] h-[10.2rem]",
+    lg: " w-[157px] text-[15px] h-[48px] py-[18px] px-[20px]",
+    xxl: "text-base",
   };
   const colors = {
-    Primary: 'bg-Peach_L9 ',
-    Secondary: 'bg-mint_m1 text-Primary_Dark',
+    Primary: "bg-Peach_L9 ",
+    Secondary: "bg-mint_m1 text-Primary_Dark",
   };
   const sizeClassName = sizes[size];
   const colorClassName = colors[variant];
@@ -48,7 +48,6 @@ export const Card2 = ({
           <span className="font-normal text-normal ">{text}</span>
           <span className="">{icon}</span>
         </div>
-
       </div>
     </div>
   );

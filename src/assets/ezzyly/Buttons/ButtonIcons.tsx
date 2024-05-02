@@ -1,19 +1,19 @@
-import React, { ButtonHTMLAttributes, ReactNode } from 'react';
-import { Loader } from './Loader';
+import React, { ButtonHTMLAttributes, ReactNode } from "react";
+import { Loader } from "./Loader";
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
-  variant?: 'primary' | 'secondary' | 'special' | 'terminus';
-  size?: 'sm' | 'md' | 'lg' | 'full';
-  color?: 'primary' | 'secondary' | 'special' | 'terminus';
+  variant?: "primary" | "secondary" | "special" | "terminus";
+  size?: "sm" | "md" | "lg" | "full";
+  color?: "primary" | "secondary" | "special" | "terminus";
   switchButtons?: boolean;
   icon?: any;
   isLoading?: boolean;
 }
 
 export const ButtonIcons = ({
-  size = 'sm',
-  variant = 'primary',
+  size = "sm",
+  variant = "primary",
   icon,
   isLoading,
   children,
@@ -22,11 +22,11 @@ export const ButtonIcons = ({
   ...props
 }: Props) => {
   const sizes = {
-    sm: 'py-[8px] text-[12px] px-[8px] w-[77px] h-[32px]',
-    md: ' py-[22px] text-[13px] px-[18px] w-[129px] h-[40px]',
-    lg: ' w-[157px] text-[15px] h-[48px] py-[18px] px-[20px]',
-    full: 'w-full py-[18px] px-5',
-    xxl: 'text-base',
+    sm: "py-[8px] text-[12px] px-[8px] w-[77px] h-[32px]",
+    md: " py-[22px] text-[13px] px-[18px] w-[129px] h-[40px]",
+    lg: " w-[157px] text-[15px] h-[48px] py-[18px] px-[20px]",
+    full: "w-full py-[18px] px-5",
+    xxl: "text-base",
   };
   const colors = {
     primary: `bg-[#0D63C6]  hover:bg-[#147AF0] active:bg-[#0B56AD] 

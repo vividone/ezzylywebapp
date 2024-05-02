@@ -27,9 +27,9 @@ import { PAGES } from "@/utils/pages";
 import { Dropdown } from "@/assets/ezzyly/dropdown/Dropdown";
 
 function RegisterComponent() {
-  const [selectedCountry, setSelectedCountry] = useState<Option>()
-  const [selectedState, setSelectedState] = useState<Option>()
-  const [selectedCity, setSelectedCity] = useState<Option>()
+  const [selectedCountry, setSelectedCountry] = useState<Option>();
+  const [selectedState, setSelectedState] = useState<Option>();
+  const [selectedCity, setSelectedCity] = useState<Option>();
   const { formik, isLoading, isSuccess, isError, error } = useRegister();
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -222,7 +222,7 @@ function RegisterComponent() {
           }
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
-      />
+        />
         <Dropdown
           placeholder="Country"
           name="country"

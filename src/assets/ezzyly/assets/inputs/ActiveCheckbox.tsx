@@ -15,4 +15,4 @@ const ActiveCheckbox = (props: SVGProps<SVGSVGElement>) => (
     />
   </svg>
 );
-export default  ActiveCheckbox;
+export default ActiveCheckbox;

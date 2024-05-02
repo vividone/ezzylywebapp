@@ -1,7 +1,7 @@
-import * as React from 'react';
-import { SVGProps } from 'react';
+import * as React from "react";
+import { SVGProps } from "react";
 const LightningIcon = (props: SVGProps<SVGSVGElement>) => (
-    <svg
+  <svg
     width={12}
     height={15}
     viewBox="0 0 10 15"

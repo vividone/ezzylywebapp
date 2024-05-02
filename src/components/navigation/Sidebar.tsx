@@ -4,7 +4,7 @@ import Flex from "../common/Flex";
 import Hamburger from "@/assets/common/Hamburger";
 import { Avatar, NavigationItems } from "@withlanda/humphrey";
 import CloseMenu from "@/assets/common/CloseMenu";
-import LandapayBlack from "@/assets/common/LandaPayBlack";
+import EzzylyBlack from "@/assets/common/EzzylyBlack";
 import { providerRoutes } from "@/utils/provider";
 import { useRouter } from "next/router";
 import PopupMenu from "../common/PopupMenu";
@@ -66,15 +66,15 @@ const Sidebar = () => {
               viewport={{ once: true }}
               whileInView={{ opacity: 1, x: 0 }}
             >
-              {/* Landapay nav */}
+              {/* Ezzyly nav */}
               <Flex
                 className={`flex-col z-10 px-8 py-[45px] justify-between 
                 min-w-[301px] min-h-screen bg-mint_m1 `}
                 onClick={(e) => e.stopPropagation()}
               >
-                {/* landapay */}
+                {/* Ezzyly */}
                 <Flex className="flex-col space-y-12">
-                  <LandapayBlack />
+                  <EzzylyBlack />
                   <Flex className="flex-col space-y-2">
                     {providerMenu.map((data) => (
                       <NavigationItems
@@ -125,13 +125,13 @@ const Sidebar = () => {
             viewport={{ once: true }}
             whileInView={{ opacity: 1, x: 0 }}
           >
-            {/* Landapay nav */}
+            {/* Ezzyly nav */}
             <Flex
               className={`flex-col min-h-screen hidden lg:flex  z-10 transition-transform duration-500 ease-linear px-8 py-[45px] justify-between
               ${isCollapse ? "items-center" : "min-w-[263px]"} bg-mint_m1 `}
               onClick={(e) => e.stopPropagation()}
             >
-              {/* landapay */}
+              {/* Ezzyly */}
               <Flex
                 className={`flex-col space-y-12  ${
                   isCollapse ? "items-center" : ""
@@ -142,7 +142,7 @@ const Sidebar = () => {
                     className="cursor-pointer"
                     onClick={handleDesktopCollapse}
                   />
-                  {!isCollapse && <LandapayBlack />}
+                  {!isCollapse && <EzzylyBlack />}
                 </Flex>
                 <Flex className="flex-col space-y-2">
                   {providerMenu.map((data) => (
