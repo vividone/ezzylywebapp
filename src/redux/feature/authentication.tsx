@@ -10,11 +10,13 @@ export interface PayloadType {
   };
 }
 
-export interface IUserEmailState {
+export interface IUserDetailsState {
+  userId: string;
   userEmail: string;
 }
 
-const initialState: IUserEmailState = {
+const initialState: IUserDetailsState = {
+  userId: "",
   userEmail: "",
 };
 
@@ -22,12 +24,13 @@ export const userDetailsSlice = createSlice({
   name: "userDetails",
   initialState,
   reducers: {
-    setUserEmail: (state: IUserEmailState, { payload }: PayloadType) => {
-      state.userEmail = payload.data as string;
+    setUserDetails: (state: IUserDetailsState, { payload }: PayloadType) => {
+      state.userEmail = payload.data.userEmail as string;
+      state.userId = payload.data.userId as string;
     },
   },
 });
 
-export const { setUserEmail } = userDetailsSlice.actions;
-export const userEmailSelector = (state: RootState) => state.userEmail;
+export const { setUserDetails } = userDetailsSlice.actions;
+export const userDetailsSelector = (state: RootState) => state;
 export default userDetailsSlice.reducer;
