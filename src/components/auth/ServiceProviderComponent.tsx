@@ -1,6 +1,7 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { Text, Flex } from "../common";
-import { CatOption } from "@/interface/auth";
+
+import { CatOption, Option } from "@/interface/auth";
 import { Buttons } from "@/assets/ezzyly/Buttons";
 import {
   RegistrationNumber,
@@ -13,6 +14,9 @@ import {
   ActiveSmsIcon,
   BriefCase,
   ActiveBriefCase,
+  Gps,
+  ActivePhone,
+  Phone,
 } from "@/assets/inputs";
 import { useOnboard } from "@/helpers/api/useAuth";
 import toast from "react-hot-toast";
@@ -20,9 +24,14 @@ import { Category } from "@/json/categories";
 import { ToastComponent } from "@/assets/ezzyly/specials/Toast";
 import { Input } from "@/assets/ezzyly/inputs/Input";
 import { Dropdown } from "@/assets/ezzyly/dropdown/Dropdown";
+import { City, Country, State } from "country-state-city";
+import ActiveGps from "@/assets/inputs/ActiveGps";
 
 function ServiceProviderComponent() {
   const { formik, isLoading, error, isError, isSuccess } = useOnboard();
+  const [selectedCountry, setSelectedCountry] = useState<Option>();
+  const [selectedState, setSelectedState] = useState<Option>();
+  const [selectedCity, setSelectedCity] = useState<Option>();
   // const [selectedState, setSelectedState] = useState<Option | null>(null);
   // const [selectedCity, setSelectedCity] = useState<Option | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<CatOption | null>(
@@ -76,7 +85,7 @@ function ServiceProviderComponent() {
         className=" w-full flex flex-col mt-2 space-y-4"
         onSubmit={handleSubmit}
       >
-        <Flex className="flex-col overflow-scrol px-3 space-y-4  max-h-[364px] ">
+        <Flex className="flex-col overflow-scrol px-3 space-y-4 ">
           {/* to falsify auto complete */}
           <Input
             variant="primary"
@@ -121,6 +130,7 @@ function ServiceProviderComponent() {
             name="dateOfInc"
             value={formik.values.dateOfInc}
             disabled={isLoading}
+            type={"date"}
             error={
               formik.errors.dateOfInc && formik.touched.dateOfInc ? true : false
             }
@@ -130,23 +140,54 @@ function ServiceProviderComponent() {
             placeholder="Date of Incorporation"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-          />
-
+          />          
           <Input
             lefticon={RegistrationNumber}
             variant="primary"
-            name="regNumber"
-            value={formik.values.regNumber}
+            name="licenseNo"
+            value={formik.values.licenseNo}
             disabled={isLoading}
             error={
-              formik.errors.regNumber && formik.touched.regNumber ? true : false
+              formik.errors.licenseNo && formik.touched.licenseNo ? true : false
             }
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             activelefticon={ActiveRegistrationNumber}
             aria-autocomplete="none"
             autoComplete="none"
-            placeholder="EIN/Tax ID"
+            placeholder="License Number"
+          />
+          <Input
+            lefticon={RegistrationNumber}
+            variant="primary"
+            name="einTinNo"
+            value={formik.values.einTinNo}
+            disabled={isLoading}
+            error={
+              formik.errors.einTinNo && formik.touched.einTinNo ? true : false
+            }
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            activelefticon={ActiveRegistrationNumber}
+            aria-autocomplete="none"
+            autoComplete="none"
+            placeholder="Ein / Tax No"
+          />
+          <Input
+            lefticon={Phone}
+            variant="primary"
+            name="phone"
+            value={formik.values.phone}
+            disabled={isLoading}
+            error={
+              formik.errors.phone && formik.touched.phone ? true : false
+            }
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            activelefticon={ActivePhone}
+            aria-autocomplete="none"
+            autoComplete="none"
+            placeholder="Phone Number"
           />
 
           <Dropdown
@@ -179,6 +220,118 @@ function ServiceProviderComponent() {
             className="text-start w-full justify-start mr-4 items-start"
             Icon={Map}
             ActiveIcon={ActiveMapIcon}
+          />
+          
+          <Input
+            lefticon={Map}
+            variant="primary"
+            name="address"
+            value={formik.values.address}
+            disabled={isLoading}
+            error={
+              formik.errors.address && formik.touched.address ? true : false
+            }
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            activelefticon={ActiveMapIcon}
+            aria-autocomplete="none"
+            autoComplete="none"
+            placeholder="Address"
+          />
+          <Dropdown
+            placeholder="Country"
+            name="country"
+            isDisabled={isLoading}
+            value={selectedCountry || ""}
+            error={formik.errors.country && formik.touched.country ? true : false}
+            onChange={(value) => {
+              if (value) {
+                const selectedOption = value as Option;
+                setSelectedCountry(selectedOption);
+                formik.setFieldValue("country", selectedOption.value);
+              } else {
+                formik.setFieldValue("country", null);
+              }
+            }}
+            onBlur={() => {
+              formik.setFieldTouched("country", true);
+            }}
+            options={Country.getAllCountries().map((item: any) => ({
+              label: item.name,
+              value: item.name,
+              name: item.isoCode,
+            }))}
+            className="items-start text-start justify-start rounded-lg border border-[#CFD9DE] "
+            Icon={Gps}
+            ActiveIcon={ActiveGps}
+          />
+          <Dropdown
+            placeholder="State"
+            name="state"
+            isDisabled={isLoading}
+            value={selectedState || ""}
+            error={formik.errors.state && formik.touched.state ? true : false}
+            onChange={(value) => {
+              if (value) {
+                const selectedOption = value as Option;
+                setSelectedState(selectedOption);
+                formik.setFieldValue("state", selectedOption.value);
+              } else {
+                formik.setFieldValue("state", null);
+              }
+            }}
+            onBlur={() => {
+              formik.setFieldTouched("state", true);
+            }}
+            options={State.getStatesOfCountry(selectedCountry?.name).map(
+              (item: any) => ({
+                label: item.name,
+                value: item.name,
+                name: item.isoCode,
+              })
+            )}
+            className="items-start text-start justify-start rounded-lg border border-[#CFD9DE] "
+            Icon={Gps}
+            ActiveIcon={ActiveGps}
+          />
+          <Dropdown
+            placeholder="City"
+            name="city"
+            isDisabled={isLoading}
+            value={selectedCity || ""}
+            error={formik.errors.city && formik.touched.city ? true : false}
+            onChange={(value) => {
+              if (value) {
+                const selectedOption = value as Option;
+                setSelectedCity(selectedOption);
+                formik.setFieldValue("city", selectedOption.value);
+              } else {
+                formik.setFieldValue("city", null);
+              }
+            }}
+            onBlur={() => {
+              formik.setFieldTouched("city", true);
+            }}
+            options={City.getCitiesOfState(
+              !selectedCountry?.name ? "" : selectedCountry.name,
+              !selectedState?.name ? "" : selectedState.name
+            ).map((item: any) => ({ label: item.name, value: item.name }))}
+            className="items-start text-start justify-start rounded-lg border border-[#CFD9DE] "
+            Icon={Gps}
+            ActiveIcon={ActiveGps}
+          />
+          <Input
+            lefticon={Map}
+            variant="primary"
+            activelefticon={ActiveMapIcon}
+            aria-autocomplete="none"
+            placeholder="zipcode"
+            name="zipcode"
+            disabled={isLoading}
+            value={formik.values.zipcode}
+            error={formik.errors.zipcode && formik.touched.zipcode ? true : false}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
           />
           {/*    <Dropdown
             placeholder="Select state"
