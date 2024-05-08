@@ -132,7 +132,6 @@ export const useRegister = () => {
           { ...values },
           {
             onSuccess: (res: any) => {
-              console.log(res)
               dispatch(setUserDetails({ data: { userEmail: values.phoneNumber, userId: res.data.data.id} }));
               router.push(PAGES.VERIFY_LOGIN);
             },
