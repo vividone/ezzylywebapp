@@ -10,8 +10,8 @@ import {
 } from "@/interface/auth";
 import { IErrorResponseType } from "@/interface/common/error";
 import {
-  setUserEmail,
-  userEmailSelector,
+  setUserDetails,
+  userDetailsSelector,
 } from "@/redux/feature/authentication";
 import {
   setUserOnboard,
@@ -37,6 +37,8 @@ import { TOKEN } from "@/utils/token";
 export const useLogin = () => {
   const router = useRouter();
   const { loginUrl } = useUrls();
+  const [, setToken] = useSessionStorage(TOKEN.ACCESS);
+  const [, setUserToken] = useSessionStorage(TOKEN.USER, "");
   const dispatch = useAppDispatch();
   // const queryClient = useQueryClient();
   const { mutate, isLoading, isError, isSuccess, error } = useMutation(
@@ -58,13 +60,18 @@ export const useLogin = () => {
         const castedValues = LoginSchema.cast(values);
 
         mutate(castedValues, {
-          onSuccess: () => {
-            dispatch(setUserEmail({ data: values.username }));
-            router.push(PAGES.VERIFY_LOGIN);
+          onSuccess: (res) => {
+            dispatch(setUserDetails({ data: { userEmail: res.data.data.user.email, userId: res.data.data.user.id} }));
+            setToken(res.data.data.jwt.token);
+            setUserToken(res.data.data);
+            router.push(PAGES.ONBOARD)
           },
-          //   onError: (res: any) => {
-
-          //   },
+          onError: (res: any) => {
+            if(res.response.data.responseCode === "010") {
+              dispatch(setUserDetails({ data: { userEmail: res.response.data.data.phoneNumber, userId: res.response.data.data.id} }));
+              router.push(PAGES.VERIFY_LOGIN);
+            }
+          },
         });
         formik.handleReset;
       } catch (error: any) {
@@ -124,13 +131,14 @@ export const useRegister = () => {
         mutate(
           { ...values },
           {
-            onSuccess: () => {
-              dispatch(setUserEmail({ data: values.email }));
+            onSuccess: (res: any) => {
+              console.log(res)
+              dispatch(setUserDetails({ data: { userEmail: values.phoneNumber, userId: res.data.data.id} }));
               router.push(PAGES.VERIFY_LOGIN);
             },
-            //   onError: (res: any) => {
+            onError: (res: any) => {
 
-            //   },
+            },
           }
         );
         formik.handleReset;
@@ -150,6 +158,7 @@ export const useRegister = () => {
 export const useOnboard = () => {
   const router = useRouter();
   const { onboardServiceProviderUrl } = useUrls();
+  const { userDetails } = useSelector(userDetailsSelector);
   const dispatch = useAppDispatch();
   // const queryClient = useQueryClient();
   const { mutate, isLoading, isSuccess, isError, error } = useMutation(
@@ -160,9 +169,17 @@ export const useOnboard = () => {
   const formik = useFormik({
     initialValues: {
       name: "",
-      regNumber: "",
+      userId: userDetails.userId,
+      address: "",
+      licenseNo: "",
+      einTinNo: "",
+      phone: "",
       description: "",
       dateOfInc: "",
+      country: "",
+      state: "",
+      city: "",
+      zipcode: "",
       categoryId: 0,
     } as IAuthOnboard,
     validationSchema: OnboardSchema,
@@ -180,7 +197,7 @@ export const useOnboard = () => {
             onSuccess: (response: any) => {
               const { _id } = response.data;
               dispatch(setUserOnboard(String(_id)));
-              router.push(PAGES.REGISTER);
+              router.push(PAGES.HOME);
             },
             //   onError: (res: any) => {
 
@@ -209,10 +226,8 @@ export const useOnboard = () => {
 // verifyLogin
 export const useVerifyLogin = (otp: string) => {
   const router = useRouter();
-  const [, setToken] = useSessionStorage(TOKEN.ACCESS);
-  const [, setUserToken] = useSessionStorage(TOKEN.USER, "");
   const { verifyLoginUrl } = useUrls();
-  const { userEmail } = useSelector(userEmailSelector);
+  const { userDetails } = useSelector(userDetailsSelector);
   // const queryClient = useQueryClient();
   const { mutate, isLoading, error } = useMutation((payload: IVerifyLogin) => {
     return axiosInstance.post(verifyLoginUrl, payload);
@@ -220,8 +235,9 @@ export const useVerifyLogin = (otp: string) => {
 
   const formik = useFormik({
     initialValues: {
+      userId: "",
       otp: "",
-      email: "",
+      phoneNumber: "",
     } as IVerifyLogin,
     validateOnBlur: false,
     validateOnChange: false,
@@ -229,13 +245,10 @@ export const useVerifyLogin = (otp: string) => {
     onSubmit: async () => {
       try {
         mutate(
-          { otp, email: userEmail },
+          { otp, phoneNumber: userDetails.userEmail, userId: userDetails.userId },
           {
-            onSuccess: (res: any) => {
-              // console.log(res);
-              setToken(res.data.access_token);
-              setUserToken(res.data.data);
-              router.push(PAGES.HOME);
+            onSuccess: () => {
+              router.push(PAGES.LOGIN);
             },
             //   onError: (res: any) => {
 
@@ -258,7 +271,7 @@ export const useVerifyLogin = (otp: string) => {
 // resend otp
 export const useResendOTP = () => {
   const { resendOTPUrl } = useUrls();
-  const { userEmail } = useSelector(userEmailSelector);
+  const { userDetails } = useSelector(userDetailsSelector);
   // const queryClient = useQueryClient();
   const {
     mutate,
@@ -270,7 +283,7 @@ export const useResendOTP = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: "",
+      phoneNumber: "",
     } as IVerifyLogin,
     validateOnBlur: false,
     validateOnChange: false,
@@ -278,7 +291,7 @@ export const useResendOTP = () => {
     onSubmit: async () => {
       try {
         mutate(
-          { email: userEmail },
+          { phoneNumber: userDetails.userEmail },
           {
             onSuccess: (res: any) => {
               console.log(res);
@@ -322,7 +335,7 @@ export const useForgotPassword = () => {
         await formik.validateForm();
         mutate(values, {
           onSuccess: () => {
-            dispatch(setUserEmail({ data: values.email }));
+            dispatch(setUserDetails({ data: values.email }));
             router.push(PAGES.RESET_PASSWORD);
           },
         });
@@ -349,7 +362,7 @@ export const useForgotPassword = () => {
 export const useResetPassword = () => {
   const { resetPasswordUrl } = useUrls();
   const router = useRouter();
-  const { userEmail } = useSelector(userEmailSelector);
+  const { userDetails } = useSelector(userDetailsSelector);
   const {
     mutate,
     isLoading,
@@ -362,7 +375,7 @@ export const useResetPassword = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: userEmail,
+      email: userDetails.userEmail,
       otp: "",
       password: "",
       confirmPassword: "",
