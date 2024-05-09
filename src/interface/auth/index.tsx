@@ -35,21 +35,23 @@ export interface IAuthRegister {
 
 export interface IAuthOnboard {
   name: string;
-  regNumber: string;
-  licenseNo?: string;
-  dateOfInc?: string;
+  userId?: string;
+  address: string;
+  einTinNo: string;
+  phone: string;
+  licenseNo: string;
+  dateOfInc: string;
   description?: string;
-  state?: string;
-  city?: string;
-  country?: string;
-  zipcode?: string;
-  latitude?: string;
-  longitude?: string;
+  state: string;
+  city: string;
+  country: string;
+  zipcode: string;
   categoryId: number;
 }
 export interface IVerifyLogin {
-  email?: string;
+  phoneNumber?: string;
   otp?: string;
+  userId?: string;
 }
 export interface IForgotPassword {
   email: string;

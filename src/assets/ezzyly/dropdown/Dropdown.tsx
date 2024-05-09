@@ -12,7 +12,7 @@ import ArrowDown from "../assets/dropdown/ArrowDown";
 import ActiveArrowDownIcon from "../assets/dropdown/ActiveArrowDown";
 
 interface SelectOptions {
-  readonly value: string;
+  readonly value: string | number;
   readonly label: string;
   readonly color?: string;
   readonly isFixed?: boolean;

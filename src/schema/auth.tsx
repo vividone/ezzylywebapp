@@ -15,17 +15,23 @@ export const RegisterSchema = Yup.object().shape({
     .oneOf([Yup.ref("password")], "Passwords must match")
     .required(""),
   username: Yup.string().required("Role is required").trim().nullable(),
+  addressLine1: Yup.string().required("Address Line 1 is required").trim().nullable(),
+  addressLine2: Yup.string().optional(),
+  country: Yup.string().required("Country is required").trim().nullable(),
+  state: Yup.string().required("State is required").trim().nullable(),
+  city: Yup.string().required("City is required").trim().nullable(),
+  zipcode: Yup.string().optional(),
 });
 
 export const OnboardSchema = Yup.object().shape({
   name: Yup.string().required("Business name is required").trim().nullable(),
-  regNumber: Yup.string().required("Register Number is required"),
-  licenseNo: Yup.string().optional().trim(),
+  einTinNo: Yup.string().required("Ein / Tax number is required"),
+  licenseNo: Yup.string().required("License Number is required").trim(),
   description: Yup.string().required("Business Description is required"),
   categoryId: Yup.number().required("Select a category"),
-  country: Yup.string().optional().trim(),
-  state: Yup.string().optional().trim(),
-  city: Yup.string().optional().trim(),
+  country: Yup.string().required().trim("Country is required"),
+  state: Yup.string().required().trim("State is required"),
+  city: Yup.string().required().trim("City is required"),
   zipcode: Yup.string().optional().trim(),
   latitude: Yup.string().optional().trim(),
   longitude: Yup.string().optional().trim(),

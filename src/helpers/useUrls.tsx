@@ -13,7 +13,7 @@ export function useUrls() {
   // Step 3
   const sendOtp = `${BASE_URL}/account/sendOtp`;
   //
-  const verifyLoginUrl = `${BASE_URL}/api/v1/auth/verify`;
+  const verifyLoginUrl = `${BASE_URL}/account/validateOtp`;
 
   const loginUrl = `${BASE_URL}/account/login`;
 

@@ -7,7 +7,7 @@ import { userClassIdSlice } from "./feature/classManagement";
 
 export const store = configureStore({
   reducer: {
-    userEmail: userDetailsSlice.reducer,
+    userDetails: userDetailsSlice.reducer,
     userOnboard: userOnboardSlice.reducer,
     userClassId: userClassIdSlice.reducer,
   },

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Text, Flex } from "../common";
 // import  from "@withlanda/humphrey";
-import { userEmailSelector } from "@/redux/feature/authentication";
+import { userDetailsSelector } from "@/redux/feature/authentication";
 import { useSelector } from "react-redux";
 import { useResendOTP, useVerifyLogin } from "@/helpers/api/useAuth";
 import { OTPInput } from "@/assets/ezzyly/inputs/OtpInput";
@@ -10,7 +10,7 @@ import { Countdown } from "@/assets/ezzyly/specials/Countdown";
 import { Buttons } from "@/assets/ezzyly/Buttons";
 
 const VerifyLoginComponent = () => {
-  const { userEmail } = useSelector(userEmailSelector);
+  const { userDetails } = useSelector(userDetailsSelector);
   const [otpError, setOtpError] = useState(false);
   const [verifyOtp, setVerifyOtp] = useState("");
   const [dateTillResend, setDateTillResend] = useState(Date.now() + 59000);
@@ -46,7 +46,7 @@ const VerifyLoginComponent = () => {
         <Text className="text-sm text-mixed_m5">
           Please authenticate your session by entering the code sent to
           <span className="font-medium text-vibing_blue_x">
-            {userEmail || ""}
+            {userDetails.userEmail || ""}
           </span>
         </Text>
       </Flex>
