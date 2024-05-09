@@ -140,7 +140,7 @@ function ServiceProviderComponent() {
             placeholder="Date of Incorporation"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
-          />          
+          />
           <Input
             lefticon={RegistrationNumber}
             variant="primary"
@@ -179,9 +179,7 @@ function ServiceProviderComponent() {
             name="phone"
             value={formik.values.phone}
             disabled={isLoading}
-            error={
-              formik.errors.phone && formik.touched.phone ? true : false
-            }
+            error={formik.errors.phone && formik.touched.phone ? true : false}
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
             activelefticon={ActivePhone}
@@ -221,7 +219,7 @@ function ServiceProviderComponent() {
             Icon={Map}
             ActiveIcon={ActiveMapIcon}
           />
-          
+
           <Input
             lefticon={Map}
             variant="primary"
@@ -243,7 +241,9 @@ function ServiceProviderComponent() {
             name="country"
             isDisabled={isLoading}
             value={selectedCountry || ""}
-            error={formik.errors.country && formik.touched.country ? true : false}
+            error={
+              formik.errors.country && formik.touched.country ? true : false
+            }
             onChange={(value) => {
               if (value) {
                 const selectedOption = value as Option;
@@ -329,7 +329,9 @@ function ServiceProviderComponent() {
             name="zipcode"
             disabled={isLoading}
             value={formik.values.zipcode}
-            error={formik.errors.zipcode && formik.touched.zipcode ? true : false}
+            error={
+              formik.errors.zipcode && formik.touched.zipcode ? true : false
+            }
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
           />

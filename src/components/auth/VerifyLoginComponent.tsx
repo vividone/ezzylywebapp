@@ -41,10 +41,10 @@ const VerifyLoginComponent = () => {
     <Flex className=" flex-col">
       <Flex className="flex-col space-y-5">
         <Text className="text-[23px] mt-4 font-bold leading-[31.05px] text-neutral_white_l11">
-          Secure login
+          Verify your phone number
         </Text>
         <Text className="text-sm text-mixed_m5">
-          Please authenticate your session by entering the code sent to
+          Please enter the OTP sent to:{" "}
           <span className="font-medium text-vibing_blue_x">
             {userDetails.userEmail || ""}
           </span>

@@ -18,7 +18,7 @@ export function useUrls() {
   const loginUrl = `${BASE_URL}/account/login`;
 
   const validateOtp = `${BASE_URL}/account/validateOtp`;
-  const resendOTPUrl = `${BASE_URL}/api/v1/auth/request-otp`;
+  const resendOTPUrl = `${BASE_URL}account/sendOtp`;
   const resetPasswordUrl = `${BASE_URL}/api/v1/auth/reset-password`;
   const getServiceProviderByUserId = `${BASE_URL}/service-provider/getServiceProviderByUserId`;
   const privacyPolicy = `${WEBSITE_URL}/privacy-policy`;

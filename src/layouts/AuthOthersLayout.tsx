@@ -25,18 +25,29 @@ import React, { FC } from "react";
 
 const AuthOthersLayout: FC<Partial<Layouts>> = (props) => {
   return (
+    // <Flex
+    //   className={`flex-col font-satoshi bg-[#F9FBFC] justify-between w-full min-h-screen max-h-screen overflow-y-auto
+    // ${props.className}
+    // `}
+    // >
+    //   {props.children}
+    //   <Flex className="bg-container w-full justify-start">
+    //     <Text className="text-center lg:hidden mt-8 lg:mt-0 max-w-[258px] lg:max-w-[max-content] mx-auto lg:mx-0 font-medium  text-mixed_m3 text-[11px] md:text-sm">
+    //       Ezzyly is a product of Seer Group Inc. | © 2024 Seer Group Inc. All
+    //       Rights Reserved.
+    //     </Text>
+    //   </Flex>
+    // </Flex>
+
     <Flex
-      className={`flex-col font-satoshi bg-[#F9FBFC] justify-between w-full min-h-screen max-h-screen overflow-y-auto
-    ${props.className}
-    `}
+      className={`flex-col  gap-10 lg:gap-6 px-2 
+      bg-mint_m2 min-h-screen max-h-screen overflow-y-auto w-full ${props.className}`}
     >
       {props.children}
-      <Flex className="bg-container w-full justify-start">
-        <Text className="text-center lg:hidden mt-8 lg:mt-0 max-w-[258px] lg:max-w-[max-content] mx-auto lg:mx-0 font-medium  text-mixed_m3 text-[11px] md:text-sm">
-          Ezzyly is a product of Seer Group Inc. | © 2024 Seer Group Inc. All
-          Rights Reserved.
-        </Text>
-      </Flex>
+      <Text className="hidden lg:inline font-medium text-white text-sm">
+        Ezzyly is a product of Seer Group Inc. | © 2024 Seer Group Inc. All
+        Rights Reserved.
+      </Text>
     </Flex>
   );
 };
