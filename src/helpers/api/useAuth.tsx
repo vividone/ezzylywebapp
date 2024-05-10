@@ -61,14 +61,28 @@ export const useLogin = () => {
 
         mutate(castedValues, {
           onSuccess: (res) => {
-            dispatch(setUserDetails({ data: { userEmail: res.data.data.user.email, userId: res.data.data.user.id} }));
+            dispatch(
+              setUserDetails({
+                data: {
+                  userEmail: res.data.data.user.email,
+                  userId: res.data.data.user.id,
+                },
+              })
+            );
             setToken(res.data.data.jwt.token);
-            setUserToken(res.data.data.user);
+            setUserToken(res.data.data);
             router.push(PAGES.ONBOARD)
           },
           onError: (res: any) => {
-            if(res.response.data.responseCode === "010") {
-              dispatch(setUserDetails({ data: { userEmail: res.response.data.data.phoneNumber, userId: res.response.data.data.id} }));
+            if (res.response.data.responseCode === "010") {
+              dispatch(
+                setUserDetails({
+                  data: {
+                    userEmail: res.response.data.data.phoneNumber,
+                    userId: res.response.data.data.id,
+                  },
+                })
+              );
               router.push(PAGES.VERIFY_LOGIN);
             }
           },
@@ -132,12 +146,18 @@ export const useRegister = () => {
           { ...values },
           {
             onSuccess: (res: any) => {
-              dispatch(setUserDetails({ data: { userEmail: values.phoneNumber, userId: res.data.data.id} }));
+              dispatch(
+                setUserDetails({
+                  data: {
+                    userEmail: values.phoneNumber,
+                    userId: res.data.data.id,
+                  },
+                })
+              );
               router.push(PAGES.VERIFY_LOGIN);
             },
-            onError: (res: any) => {
-
-            },
+            // eslint-disable-next-line @typescript-eslint/no-empty-function
+            onError: (res: any) => {},
           }
         );
         formik.handleReset;
@@ -244,7 +264,11 @@ export const useVerifyLogin = (otp: string) => {
     onSubmit: async () => {
       try {
         mutate(
-          { otp, phoneNumber: userDetails.userEmail, userId: userDetails.userId },
+          {
+            otp,
+            phoneNumber: userDetails.userEmail,
+            userId: userDetails.userId,
+          },
           {
             onSuccess: () => {
               router.push(PAGES.LOGIN);

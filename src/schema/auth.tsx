@@ -15,7 +15,10 @@ export const RegisterSchema = Yup.object().shape({
     .oneOf([Yup.ref("password")], "Passwords must match")
     .required(""),
   username: Yup.string().required("Role is required").trim().nullable(),
-  addressLine1: Yup.string().required("Address Line 1 is required").trim().nullable(),
+  addressLine1: Yup.string()
+    .required("Address Line 1 is required")
+    .trim()
+    .nullable(),
   addressLine2: Yup.string().optional(),
   country: Yup.string().required("Country is required").trim().nullable(),
   state: Yup.string().required("State is required").trim().nullable(),
