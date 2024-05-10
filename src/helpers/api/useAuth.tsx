@@ -63,7 +63,7 @@ export const useLogin = () => {
           onSuccess: (res) => {
             dispatch(setUserDetails({ data: { userEmail: res.data.data.user.email, userId: res.data.data.user.id} }));
             setToken(res.data.data.jwt.token);
-            setUserToken(res.data.data);
+            setUserToken(res.data.data.user);
             router.push(PAGES.ONBOARD)
           },
           onError: (res: any) => {
