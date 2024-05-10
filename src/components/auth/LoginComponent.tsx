@@ -90,9 +90,7 @@ function LoginComponent() {
         />
         {/* remember password */}
         <Flex className="justify-between text-sm  md:text-base">
-          <Text className="text-[#5C6870] text-sm">
-            Can’t remember password?
-          </Text>
+          <Text className="text-[#5C6870] text-sm">Forgot password?</Text>
           <a
             href={PAGES.FORGOT_PASSWORD}
             className="text-vibing_blue_x cursor-pointer font-medium text-sm"
@@ -117,10 +115,10 @@ function LoginComponent() {
       {/* create new account */}
       <Flex className="w-full justify-center text-sm  md:text-base mt-6">
         <Text className="text-center text-mixed_m5 ">
-          Don’t have an account?
+          Want to signup as a Service Provider?
           <a href={PAGES.REGISTER} className="cursor-pointer">
             <span className="text-vibing_blue_x ml-2 font-medium">
-              Create account
+              Get Started
             </span>
           </a>
         </Text>
