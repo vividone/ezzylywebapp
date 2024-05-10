@@ -48,6 +48,7 @@ export const Countdown: FC<Partial<ICountdownProps>> = (props) => {
           <Renderer
             completed={completed}
             seconds={seconds}
+            // eslint-disable-next-line react/no-children-prop
             children={props.children}
             onClick={props.onClick}
           />

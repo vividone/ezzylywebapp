@@ -3,7 +3,6 @@ module.exports = {
   darkMode: "class",
   content: [
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@withlanda/humphrey/dist/*.js",
   ],
   theme: {
     extend: {

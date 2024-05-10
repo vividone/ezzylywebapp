@@ -1,6 +1,6 @@
 import React, { FC, useState } from "react";
 import Flex from "./Flex";
-import { Avatar, ToastComponent } from "@withlanda/humphrey";
+import { ToastComponent } from "@/assets/ezzyly/specials/Toast";
 import Text from "./Text";
 import ArrowBlueDown from "@/assets/navigation/ArrowBlueDown";
 import ProfileIcon from "@/assets/inputs/ProfileIcon";
@@ -51,10 +51,10 @@ const PopupMenu: FC<Partial<IPopupMenu>> = (props) => {
             props.isCollapse ? "items-center" : ""
           }`}
         >
-          <Avatar
+          {/* <Avatar
             name={`${userDetails?.firstName} ${userDetails?.lastName}`}
             className="min-w-[40px] min-h-[40px]"
-          />
+          /> */}
           {props.isCollapse && <ArrowBlueDown />}
           {!props.isCollapse && (
             <Flex className="flex-col">

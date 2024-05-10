@@ -143,8 +143,10 @@ export const Dropdown = ({ error, ...props }: Partial<DropdownType>) => {
   return (
     <Select
       {...props}
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       Icon={props.Icon || null} // serves as the icon
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       ActiveIcon={props.ActiveIcon || null} // serves as the icon
       components={{

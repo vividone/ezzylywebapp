@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import Stepper from "../stepper/Stepper";
 import { Flex, Text } from "../common";
-import { Buttons, Input } from "@withlanda/humphrey";
+import { Buttons } from "@/assets/ezzyly/Buttons";
+import { Input } from "@/assets/ezzyly/inputs/Input";
 import {
   RegistrationNumber,
   ActiveRegistrationNumber,

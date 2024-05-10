@@ -2,12 +2,13 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Flex from "../common/Flex";
 import Hamburger from "@/assets/common/Hamburger";
-import { Avatar, NavigationItems } from "@withlanda/humphrey";
+import { NavigationItems } from "@/assets/ezzyly/navitems/NavigationItems";
 import CloseMenu from "@/assets/common/CloseMenu";
-import EzzylyBlack from "@/assets/common/EzzylyBlack";
+// import EzzylyBlack from "@/assets/common/EzzylyBlack";
 import { providerRoutes } from "@/utils/provider";
 import { useRouter } from "next/router";
 import PopupMenu from "../common/PopupMenu";
+import EzzylyLogo from "@/assets/common/EzzlylyLogo";
 
 const Sidebar = () => {
   const [isMenu, setIsMenu] = useState(false);
@@ -39,11 +40,11 @@ const Sidebar = () => {
     <Flex className="lg:flex-col lg:max-w-[263px] lg:min-w-[263px] w-full transition-all ease-linear duration-700">
       <Flex className="px-8 py-[30px] w-full flex-row items-center justify-between">
         <Hamburger onClick={handleMobile} className="cursor-pointer" />
-        <Avatar
+        {/* <Avatar
           name="Dera"
           size="40px"
           className="min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px] lg:hidden"
-        />
+        /> */}
       </Flex>
       <AnimatePresence>
         {/* Mobile Navigation */}
@@ -74,7 +75,7 @@ const Sidebar = () => {
               >
                 {/* Ezzyly */}
                 <Flex className="flex-col space-y-12">
-                  <EzzylyBlack />
+                  <EzzylyLogo />
                   <Flex className="flex-col space-y-2">
                     {providerMenu.map((data) => (
                       <NavigationItems
@@ -142,7 +143,7 @@ const Sidebar = () => {
                     className="cursor-pointer"
                     onClick={handleDesktopCollapse}
                   />
-                  {!isCollapse && <EzzylyBlack />}
+                  {!isCollapse && <EzzylyLogo />}
                 </Flex>
                 <Flex className="flex-col space-y-2">
                   {providerMenu.map((data) => (
