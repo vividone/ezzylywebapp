@@ -45,9 +45,7 @@ const Sidebar = () => {
           className="min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px] lg:hidden"
         /> */}
 
-        <div
-          className="min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px] lg:hidden"
-        >
+        <div className="min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px] lg:hidden">
           User
         </div>
       </Flex>

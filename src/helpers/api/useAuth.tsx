@@ -71,12 +71,11 @@ export const useLogin = () => {
             );
             setToken(res.data.data.jwt.token);
             setUserToken(res.data.data.user);
-            if(res.data.data.serviceProvider) {
-              router.push(PAGES.HOME)
-            }
-            else {
+            if (res.data.data.serviceProvider) {
+              router.push(PAGES.HOME);
+            } else {
               router.push(PAGES.ONBOARD);
-            }  
+            }
           },
           onError: (res: any) => {
             if (res.response.data.responseCode === "010") {
