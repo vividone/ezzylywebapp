@@ -3,7 +3,9 @@
 import React, { FormEvent, useEffect } from "react";
 import Flex from "../common/Flex";
 import Text from "../common/Text";
-import { Buttons, PasswordInput, Toast } from "@withlanda/humphrey";
+import { Buttons } from "@/assets/ezzyly/Buttons";
+import { Toast } from "@/assets/ezzyly/specials/Toast";
+import { PasswordInput } from "@/assets/ezzyly/inputs/Input";
 import LockIcon from "@/assets/inputs/LockIcon";
 import ActiveLockIcon from "@/assets/inputs/ActiveLockIcon";
 import { useResetPassword } from "@/helpers/api/useAuth";

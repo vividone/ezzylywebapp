@@ -51,11 +51,18 @@ const PopupMenu: FC<Partial<IPopupMenu>> = (props) => {
             props.isCollapse ? "items-center" : ""
           }`}
         >
+
+          {/* <Avatar
+            name={`${userDetails?.firstName} ${userDetails?.lastName}`}
+            className="min-w-[40px] min-h-[40px]"
+          /> */}
+
           <div
             className="min-w-[40px] min-h-[40px] flex items-center justify-center rounded-full bg-slate-200"
           >
             {`${userDetails?.firstName.charAt(0)}${userDetails?.lastName.charAt(0)}`}
           </div>
+
           {props.isCollapse && <ArrowBlueDown />}
           {!props.isCollapse && (
             <Flex className="flex-col">

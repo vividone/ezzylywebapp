@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 import useSessionStorage from "@/hooks/useSessionStorage";
 import { TOKEN } from "@/utils/token";
 import { toast } from "react-hot-toast";
-import { ToastComponent } from "@withlanda/humphrey";
+import { ToastComponent } from "@/assets/ezzyly/specials/Toast";
 
 interface IAuthGuard {
   children: any;

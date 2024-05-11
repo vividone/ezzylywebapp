@@ -1,5 +1,5 @@
 import SetupPassword from "@/assets/auth/SetupPassword";
-import EzzylyBlack from "@/assets/common/EzzylyBlack";
+import EzzylyLogo from "@/assets/common/EzzlylyLogo";
 import ResetPasswordComponent from "@/components/auth/ResetPasswordComponent";
 import Flex from "@/components/common/Flex";
 import Text from "@/components/common/Text";
@@ -15,7 +15,7 @@ const ResetPassword = () => {
         <Flex className="w-full items-center lg:items-start lg:mt-8 lg:justify-between flex-col">
           <Flex className="flex-col">
             <a href={PAGES.LOGIN}>
-              <EzzylyBlack />
+              <EzzylyLogo />
             </a>
             <Image
               src="/img/accountmockup.png"
