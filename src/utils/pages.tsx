@@ -5,5 +5,5 @@ export const PAGES = {
   FORGOT_PASSWORD: "/auth/forgot-password",
   VERIFY_LOGIN: "/auth/verify-login",
   RESET_PASSWORD: "/auth/reset-password",
-  HOME: "/account/overview",
+  HOME: "/dashboard/overview",
 };
