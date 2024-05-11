@@ -4,7 +4,6 @@ import Flex from "../common/Flex";
 import Hamburger from "@/assets/common/Hamburger";
 import { NavigationItems } from "@/assets/ezzyly/navitems/NavigationItems";
 import CloseMenu from "@/assets/common/CloseMenu";
-// import EzzylyBlack from "@/assets/common/EzzylyBlack";
 import { providerRoutes } from "@/utils/provider";
 import { useRouter } from "next/router";
 import PopupMenu from "../common/PopupMenu";
@@ -45,6 +44,12 @@ const Sidebar = () => {
           size="40px"
           className="min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px] lg:hidden"
         /> */}
+
+        <div
+          className="min-w-[40px] max-w-[40px] min-h-[40px] max-h-[40px] lg:hidden"
+        >
+          User
+        </div>
       </Flex>
       <AnimatePresence>
         {/* Mobile Navigation */}
