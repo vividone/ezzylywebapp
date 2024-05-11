@@ -7,7 +7,7 @@ import CloseMenu from "@/assets/common/CloseMenu";
 import { providerRoutes } from "@/utils/provider";
 import { useRouter } from "next/router";
 import PopupMenu from "../common/PopupMenu";
-import EzzylyLogo from "@/assets/common/EzzlylyLogo";
+import EzzylyIcon from "@/assets/common/EzzylyIcon";
 
 const Sidebar = () => {
   const [isMenu, setIsMenu] = useState(false);
@@ -78,7 +78,7 @@ const Sidebar = () => {
               >
                 {/* Ezzyly */}
                 <Flex className="flex-col space-y-12">
-                  <EzzylyLogo />
+                  <EzzylyIcon />
                   <Flex className="flex-col space-y-2">
                     {providerMenu.map((data) => (
                       <NavigationItems
@@ -146,7 +146,7 @@ const Sidebar = () => {
                     className="cursor-pointer"
                     onClick={handleDesktopCollapse}
                   />
-                  {!isCollapse && <EzzylyLogo />}
+                  {!isCollapse && <EzzylyIcon />}
                 </Flex>
                 <Flex className="flex-col space-y-2">
                   {providerMenu.map((data) => (

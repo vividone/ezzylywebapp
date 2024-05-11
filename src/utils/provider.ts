@@ -8,12 +8,12 @@ export const providerRoutes = [
     name: "Home",
     icon: HomeIcon,
     activeIcon: ActiveHomeIcon,
-    path: "/account/overview",
+    path: "/dashboard/overview",
   },
   {
     name: "Service",
     icon: FeeAdvanceIcon,
     activeIcon: ActiveFeeAdvance,
-    path: "/account/service/",
+    path: "/dashboard/service/",
   },
 ];
