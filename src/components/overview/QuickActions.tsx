@@ -11,16 +11,16 @@ const QuickActions = () => {
         <QuickActionsSingle
           text="Your profile is incomplete"
           linkText="Go to profile"
-          path="/account/overview"
+          path="/dashboard/profile"
           className="text-[#FF6565] bg-cover bg-center"
           style={{
             backgroundImage: "url(/images/incomplete.png)",
           }}
         />
         <QuickActionsSingle
-          text="Complete your school profile"
+          text="Setup your services"
           linkText="Update now"
-          path="/account/overview"
+          path="/dashboard/service"
           className="text-[#186894] bg-cover bg-center"
           style={{
             backgroundImage: "url(/images/reviewed.png)",
@@ -29,7 +29,7 @@ const QuickActions = () => {
         <QuickActionsSingle
           text="Facing a difficulty?"
           linkText="Get help"
-          path="/account/overview"
+          path={"NEXT_SUPPORT_URL"}
           className="text-[#186894] bg-cover bg-center"
           style={{
             backgroundImage: "url(/images/difficulty.png)",

@@ -6,6 +6,7 @@ import React from "react";
 import useSessionStorage from "@/helpers/api/useSession";
 import { IAuthRegister } from "@/interface/auth";
 import { TOKEN } from "@/utils/token";
+import QuickActions from "@/components/overview/QuickActions";
 
 const ServiceProvider = () => {
   const [userToken] = useSessionStorage<IAuthRegister>(TOKEN.USER);
@@ -26,7 +27,7 @@ const ServiceProvider = () => {
 
       {/* balances */}
       {/* quick actions */}
-      {/* <QuickActions /> */}
+      <QuickActions />
     </InAppLayout>
   );
 };

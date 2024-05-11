@@ -32,7 +32,7 @@ const Overview = () => {
       {/* balances */}
       <Balances />
       {/* quick actions */}
-      {/* <QuickActions /> */}
+      <QuickActions />
     </InAppLayout>
   );
 };
