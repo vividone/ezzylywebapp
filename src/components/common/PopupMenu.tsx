@@ -85,7 +85,7 @@ const PopupMenu: FC<Partial<IPopupMenu>> = (props) => {
           <Flex className="absolute z-10 space-y-1 -top-28 -right-20 flex-col -mt-2 py-3 w-48 bg-white rounded-md shadow-lg">
             {/* Menu items */}
             <a
-              href="/account/profile"
+              href="/dashboard/profile"
               className=" flex px-4 py-2 items-center text-mixed_m7 space-x-4"
               onClick={closeMenu}
             >

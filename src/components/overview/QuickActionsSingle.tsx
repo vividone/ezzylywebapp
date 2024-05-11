@@ -7,11 +7,13 @@ interface IQuickActions extends HTMLAttributes<HTMLDivElement> {
   text: string;
   linkText: string;
   path: string;
+  url?: string;
+  target?: string;
 }
 const QuickActionsSingle: FC<IQuickActions> = (props) => {
   // intentional so that the ...rest doesn't conflict
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const { text, linkText, path, className, ...rest } = props;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars, camelcase
+  const { target, url, text, linkText, path, className, ...rest } = props;
   return (
     <Flex
       className={`flex-col justify-between min-h-[88px] max-h-[88px] px-5 py-6
@@ -24,7 +26,8 @@ const QuickActionsSingle: FC<IQuickActions> = (props) => {
 
       <a
         className="flex items-center cursor-pointer mt-3 gap-x-[9px]"
-        href={props.path}
+        href={props.path || url}
+        target={target}
       >
         <Text className="text-mixed_m6 text-sm"> {props.linkText || ""}</Text>
         <ArrowRightIcon />

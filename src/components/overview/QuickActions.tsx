@@ -4,6 +4,11 @@ import Text from "../common/Text";
 import QuickActionsSingle from "./QuickActionsSingle";
 
 const QuickActions = () => {
+
+  // console.log(useUrls);
+  const supportUrl  = "https://support.ezzylyapp.com/hc/en-us";
+
+
   return (
     <Flex className="flex-col mt-8">
       <Text className="text-mixed_m6 font-bold text-[19px]">Quick Actions</Text>
@@ -29,7 +34,8 @@ const QuickActions = () => {
         <QuickActionsSingle
           text="Facing a difficulty?"
           linkText="Get help"
-          path={"NEXT_SUPPORT_URL"}
+          path={supportUrl}
+          target="_blank"
           className="text-[#186894] bg-cover bg-center"
           style={{
             backgroundImage: "url(/images/difficulty.png)",

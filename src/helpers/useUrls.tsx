@@ -1,6 +1,7 @@
 export const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 export const TOKEN_VALUE = "Ezzyly_AUTH";
 export const WEBSITE_URL = process.env.NEXT_WEBSITE_URL;
+export const SUPPORT_URL = process.env.SUPPORT_URL;
 
 export function useUrls() {
   // Auth endpoints
@@ -21,10 +22,11 @@ export function useUrls() {
   const resendOTPUrl = `${BASE_URL}account/sendOtp`;
   const resetPasswordUrl = `${BASE_URL}/api/v1/auth/reset-password`;
   const getServiceProviderByUserId = `${BASE_URL}/service-provider/getServiceProviderByUserId`;
-  const privacyPolicy = `${WEBSITE_URL}/privacy-policy`;
-  const partnerTerms = `${WEBSITE_URL}/partner-terms`;
-  const termsOfUse = `${WEBSITE_URL}/terms-of-use`;
-  const cookiePolicy = `${WEBSITE_URL}/cookie-policy`;
+  const supportUrl = `${SUPPORT_URL}/hc/en-us`;
+  // const privacyPolicy = `${WEBSITE_URL}/privacy-policy`;
+  // const partnerTerms = `${WEBSITE_URL}/partner-terms`;
+  // const termsOfUse = `${WEBSITE_URL}/terms-of-use`;
+  // const cookiePolicy = `${WEBSITE_URL}/cookie-policy`;
 
   return {
     loginUrl,
@@ -36,9 +38,6 @@ export function useUrls() {
     onboardServiceProviderUrl,
     resetPasswordUrl,
     getServiceProviderByUserId,
-    privacyPolicy,
-    partnerTerms,
-    termsOfUse,
-    cookiePolicy,
+    supportUrl,
   };
 }

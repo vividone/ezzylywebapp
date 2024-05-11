@@ -12,7 +12,7 @@ const Revenue = () => {
   return (
     <Flex className="flex-col px-5 rounded-xl justify-between py-6 bg-vibing_blue_9 min-w-[237px] lg:min-w-[300px] lg:max-w-[300px] min-h-[149px] max-h-[149px]">
       <Flex className="flex-col">
-        <Text className="text-vibing_blue_1 font-medium">Account Overview</Text>
+        <Text className="text-vibing_blue_1 font-medium">Revenue</Text>
 
         <Text className=" text-[33px] leading-[49.5px] font-satoshi text-vibing_blue_1 font-black">
           {hide ? "********" : "$ 0"}
