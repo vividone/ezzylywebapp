@@ -4,10 +4,8 @@ import Text from "../common/Text";
 import QuickActionsSingle from "./QuickActionsSingle";
 
 const QuickActions = () => {
-
   // console.log(useUrls);
-  const supportUrl  = "https://support.ezzylyapp.com/hc/en-us";
-
+  const supportUrl = "https://support.ezzylyapp.com/hc/en-us";
 
   return (
     <Flex className="flex-col mt-8">
